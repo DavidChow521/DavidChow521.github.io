@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="ra6DNBzrpM" />
+    <meta name="baidu_union_verify" content="a914f342bd6b1045672cb4fdb88594c3">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="周滔|个人博客|地主家的傻儿子Ha|酒馆博客|文科生@Wen.Colson|DavidChou|DavidChow|Crazy|Garry_Tao|适用于某内部系统|基于jquery、bootstrap弹窗组件">
+    <meta name="keyword"  content="周滔|个人博客|地主家的傻儿子Ha|酒馆博客|文科生@Wen.Colson|DavidChou|DavidChow|Crazy|Garry_Tao|适用于某内部系统|基于jquery、bootstrap弹窗组件">
+    <link rel="shortcut icon" href="/assets/signature/favicon_32x32.ico">
+    <link rel="shortcut icon" href="/assets/signature/favicon_48x48.ico">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    
+    
+      <script src="https://cdn1.lncld.net/static/js/3.10.0/av-min.js"></script>
+      <script>AV.init({appId:"kNdajnVW0v5O51pzRQrBTf0C-gzGzoHsz", appKey:"5V4YaEfeVC7Lc7cXpb02GFsu"});</script>
+    
+    <title>
+        
+          基于jquery、bootstrap弹窗组件 - Bar blog
+        
+    </title>
+
+    <link rel="canonical" href="https://dyrainsy.com/article/cjvrpjvxu0006n4uzr7sd6w0i.html">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+
+    <!-- 私人订制 -->
+    <link rel="stylesheet" href="/css/privatecustom.css">
+
+    <link rel="stylesheet" href="/css/donate.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/assets/banner/article_backgroud_default.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+                            
+                        </div>
+                        <h1>基于jquery、bootstrap弹窗组件</h1>
+                        <h2 class="subheading">适用于某内部系统</h2>
+                        <span class="meta">
+                            Posted by Tony on
+                            Jan 16, 2018
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Bar blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2 id="简介">简介</h2>
+<blockquote>
+<p><code>模块化</code>、<code>低耦合</code>、<code>高扩展性</code> 的架构设计为降低开发难度，提升开发效率而生。</p>
+</blockquote>
+<h2 id="准备">准备</h2>
+<blockquote>
+<p>为减小带宽占用、降低可读性防止投机取巧者更改程序 ,js文件必须<code>压缩</code>之后方可引用。<br>
+现有组件已默认添加对应js，开发直接引用对应<code>view.cshtml</code>即可</p>
+</blockquote>
+<h3 id="核心20">核心2.0</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://code.jquery.com/jquery-1.11.3.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">@System.Web.Optimization.Scripts.Render(<span class="string">"~/bundles/Modules/core.js"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="商品组件20">商品组件2.0</h3>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@Html.Partial(<span class="string">"~/Modules/shangpin/view.cshtml"</span>)</span><br><span class="line">&lt;link href=<span class="string">"~/Content/css/tree.css"</span> rel=<span class="string">"stylesheet"</span> /&gt;</span><br><span class="line">@System.Web.Optimization.Scripts.Render(<span class="string">"~/bundles/Modules/shangpin.js"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="代金券组件20">代金券组件2.0</h3>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Html.Partial(<span class="string">"~/Modules/daijinquan/view.cshtml"</span>)</span><br><span class="line">@System.Web.Optimization.Scripts.Render(<span class="string">"~/bundles/Modules/daijinquan.js"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="门店组件20">门店组件2.0</h3>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Html.Partial(<span class="string">"~/Modules/mendian/view.cshtml"</span>)</span><br><span class="line">@System.Web.Optimization.Scripts.Render(<span class="string">"~/bundles/Modules/mendian.js"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="会员组件20">会员组件2.0</h3>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Html.Partial(<span class="string">"~/Modules/huiyuan/view.cshtml"</span>)</span><br><span class="line">@System.Web.Optimization.Scripts.Render(<span class="string">"~/bundles/Modules/huiyuan.js"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="拼团组件20">拼团组件2.0</h3>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Html.Partial(<span class="string">"~/Modules/pintuan/view.cshtml"</span>)</span><br><span class="line">@System.Web.Optimization.Scripts.Render(<span class="string">"~/bundles/Modules/pintuan.js"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="团购组件20">团购组件2.0</h3>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Html.Partial(<span class="string">"~/Modules/tuangou/view.cshtml"</span>)</span><br><span class="line">@System.Web.Optimization.Scripts.Render(<span class="string">"~/bundles/Modules/tuangou.js"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="api">API</h2>
+<h3 id="内置参数">内置参数</h3>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">dialog:#窗口;  </span><br><span class="line">title:#窗口标题;  </span><br><span class="line">toolbar:#窗口工具栏;  </span><br><span class="line">startDate:#开始时间;  </span><br><span class="line">endDate:#结束时间;  </span><br><span class="line">search:#搜索按钮;  </span><br><span class="line">keyword: #关键字;  </span><br><span class="line">batch:#批量添加按钮;  </span><br><span class="line">table:#bootstrapTable;  </span><br><span class="line">grid:当前表格数据;</span><br><span class="line">category:当前分类数据;</span><br><span class="line">skuEnabled:是否启用SKU，默认false 或 null;  </span><br><span class="line">sortSingleEnabled:是否启用分类悬浮选择，默认false 或 null;</span><br><span class="line">isPost:是否可提交，默认true;</span><br><span class="line">limit:总条数;</span><br><span class="line">modules.debug:是否开启调试，默认true;</span><br></pre></td></tr></table></figure>
+<h3 id="内置方法">内置方法</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">.debugLog = <span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//调试日志</span></span><br><span class="line">&#125;</span><br><span class="line">.formatSet = <span class="function"><span class="keyword">function</span> (<span class="params">value, row, index</span>) </span>&#123;</span><br><span class="line">   <span class="comment">//格式化操作按钮</span></span><br><span class="line">   <span class="keyword">return</span> <span class="string">"&lt;a href='javascript:;' data-index='"</span> + index + <span class="string">"' class='btn btn-primary btn-xs'&gt;选择&lt;/a&gt;"</span>;</span><br><span class="line">&#125;;</span><br><span class="line">.formatSortSet = <span class="function"><span class="keyword">function</span> (<span class="params">value, row, index</span>) </span>&#123;</span><br><span class="line">   <span class="comment">//格式化分类操作按钮</span></span><br><span class="line">   <span class="keyword">return</span> <span class="string">"&lt;button class='addBtn btn btn-primary btn-xs'&gt;添加&lt;/button&gt;"</span>;</span><br><span class="line">&#125;;</span><br><span class="line">.formatCheckbox = <span class="function"><span class="keyword">function</span> (<span class="params">value, row, index, self</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//SkuCount&gt;0，则表示SKU商品</span></span><br><span class="line">    <span class="comment">//ItemType=2，则表示套餐商品</span></span><br><span class="line">    <span class="comment">//详细请参考枚举YhHelper.EnumItemType</span></span><br><span class="line">     <span class="keyword">if</span> (row.SkuCount &gt; <span class="number">0</span> || row.ItemType == <span class="number">2</span>) &#123;</span><br><span class="line">        self.checkbox = <span class="literal">false</span>;</span><br><span class="line">     &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        self.checkbox = <span class="literal">true</span>;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;;</span><br><span class="line">.afterSelect = <span class="function"><span class="keyword">function</span> (<span class="params">data, element</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//批量、单选以arry集合返回 </span></span><br><span class="line">    <span class="comment">//data=&#123;grid:表格数据,category:分类数据&#125;    </span></span><br><span class="line">    <span class="comment">//element返回当前单选元素</span></span><br><span class="line">    <span class="keyword">this</span>.debugLog(data);</span><br><span class="line">&#125;;</span><br><span class="line">.singleButton = <span class="function"><span class="keyword">function</span> (<span class="params">element</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//重写单选按钮事件</span></span><br><span class="line">&#125;</span><br><span class="line">.sortSingleButton= <span class="function"><span class="keyword">function</span> (<span class="params">element</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//重写分类悬浮单选按钮事件</span></span><br><span class="line">&#125;</span><br><span class="line">.batchButton = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//重写批量添加按钮事件</span></span><br><span class="line">&#125;</span><br><span class="line">.initGrid(&#123;</span><br><span class="line">    <span class="comment">//某元素触发后需调用函数</span></span><br><span class="line">    <span class="comment">//底层采用bootstrapTable，SO!键值传参是一样的</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="标题头示例">标题头示例</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//S:手动添加标签到商品组件</span></span><br><span class="line">$(.title).remove();</span><br><span class="line">$(<span class="string">'&lt;div class="row"&gt;'</span></span><br><span class="line">       +<span class="string">'&lt;div class="pull-left" style="padding-top: 5px; margin-right: 10px; margin-left: 10px"&gt;'</span></span><br><span class="line">             +<span class="string">'&lt;h4 class="modal-title" id="shangpinTitle"&gt;选择商品&lt;font style="color:red;font-size:13px"&gt;重点提示内容&lt;/font&gt;&lt;/h4&gt;'</span></span><br><span class="line">       +<span class="string">'&lt;/div&gt;'</span></span><br><span class="line"> +<span class="string">'&lt;/div&gt;'</span>).insertAfter(.dialog + <span class="string">" button.close"</span>);</span><br><span class="line"><span class="comment">//E:手动添加标签到商品组件</span></span><br></pre></td></tr></table></figure>
+<h3 id="商品示例">商品示例</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> msp = <span class="keyword">new</span> modules.shangpin();</span><br><span class="line">msp.initGrid(&#123;</span><br><span class="line">    url: <span class="string">"/Item/GetStoreItemByCategoryIdEx"</span>,</span><br><span class="line">    queryParams: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            operstoreid: 门店ID,</span><br><span class="line">            keyword: $(msp.keyword).val(),</span><br><span class="line">            limit: <span class="keyword">this</span>.pageSize,</span><br><span class="line">            offset: <span class="keyword">this</span>.pageNumber</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//初始化商品分类，则启用</span></span><br><span class="line">msp.initCategory(&#123;</span><br><span class="line">    url: <span class="string">"/ItemCategory/GetCategoryInfo?StoreID=门店ID"</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//初始化SKU商品选择，skuEnabled=true则启用</span></span><br><span class="line">msp.initSku(&#123;</span><br><span class="line">    enabled: <span class="literal">true</span>,</span><br><span class="line">    url: <span class="string">"/Item/GetSkuLevel?operstoreid=门店ID"</span>,</span><br><span class="line">    getUrl: <span class="string">"/Item/GetSelectedItemSkuDetail?operstoreid=门店ID"</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="代金券示例">代金券示例</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> djq = <span class="keyword">new</span> modules.daijinquan();</span><br><span class="line"><span class="comment">//某元素触发后需调用函数</span></span><br><span class="line">djq.initGrid(&#123;</span><br><span class="line">  url: <span class="string">"/CommonAPI/GetCouponList"</span>,</span><br><span class="line">  queryParams: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> &#123;</span><br><span class="line">           CompanyID:公司ID,</span><br><span class="line">           Keyword: $(djq.keyword).val(),</span><br><span class="line">           StartDate: $(djq.startDate).val(),</span><br><span class="line">           EndDate: $(djq.endDate).val(),</span><br><span class="line">           limit: <span class="keyword">this</span>.pageSize,</span><br><span class="line">           offset: <span class="keyword">this</span>.pageNumber</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="门店示例">门店示例</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mmd = <span class="keyword">new</span> modules.mendian();</span><br><span class="line">mmd.initGrid(&#123;</span><br><span class="line">   url: <span class="string">"/CommonAPI/GetShopsList"</span>,</span><br><span class="line">   queryParams: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> &#123;</span><br><span class="line">           StoreID: 门店ID,</span><br><span class="line">           Keyword: $(mmd.keyword).val(),</span><br><span class="line">           limit: <span class="keyword">this</span>.pageSize,</span><br><span class="line">           offset: <span class="keyword">this</span>.pageNumber</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="会员示例">会员示例</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hyc = <span class="keyword">new</span> modules.huiyuan();</span><br><span class="line">hyc.initGrid(&#123;</span><br><span class="line">   url: <span class="string">"/CommonAPI/GetcardLisrt"</span>,</span><br><span class="line">   queryParams: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> &#123;</span><br><span class="line">           storeid:门店ID,</span><br><span class="line">           Keyword: $(hyc.keyword).val(),</span><br><span class="line">           limit: <span class="keyword">this</span>.pageSize,</span><br><span class="line">           offset: <span class="keyword">this</span>.pageNumber</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="拼团示例">拼团示例</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mpt = <span class="keyword">new</span> modules.pintuan();</span><br><span class="line">mpt.initGrid(&#123;</span><br><span class="line">        url: <span class="string">'/pagelayout/GetPinItemList'</span>,</span><br><span class="line">        queryParams: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                storeId: 门店ID,</span><br><span class="line">                keywords:$(mpt.keyword).val(),</span><br><span class="line">                pageSize: <span class="keyword">this</span>.pageSize,</span><br><span class="line">                pageIndex: <span class="keyword">this</span>.pageNumber</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="团购示例">团购示例</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mtg = <span class="keyword">new</span> modules.tuangou();</span><br><span class="line">mtg.initGrid(&#123;</span><br><span class="line">        url: <span class="string">'/pagelayout/GetTuanItemList'</span>,</span><br><span class="line">        queryParams: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                companyId: 公司ID,</span><br><span class="line">                keywords: $(mtg.keyword).val(),</span><br><span class="line">                pageSize: <span class="keyword">this</span>.pageSize,</span><br><span class="line">                pageIndex: <span class="keyword">this</span>.pageNumber</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+
+
+                
+                <blockquote class="post-copyright">
+                    <p>
+                        <strong>文章作者:</strong> Tony</br>
+                        <strong>发布时间:</strong> Jan 16, 2018 15:23:24</br>
+                        <strong>最后更新:</strong>
+                        Apr 01, 2020 22:32:52</br>
+                        <strong>原始链接:</strong> <a href="https://dyrainsy.com/article/cjvrpjvxu0006n4uzr7sd6w0i.html"
+                            title="基于jquery、bootstrap弹窗组件">https://dyrainsy.com/article/cjvrpjvxu0006n4uzr7sd6w0i.html</a></br>
+                        <strong>版权声明:</strong> <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/"
+                            title="知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a> 。转载请注明出处！
+                    </p>
+                </blockquote>
+                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/article/cjvrpjvxl0003n4uze8jvm7wh.html" data-toggle="tooltip" data-placement="top"
+                            title="HTTP服务">&larr; Previous </a>
+                    </li>
+                    
+                    
+                </ul>
+
+                <br>
+
+                <!--打赏-->
+                
+                <div class="reward">
+                    <div class="reward-button">赏 <span class="reward-code">
+                            <span class="alipay-code"> <img class="alipay-img"
+                                    src="/assets/zanshang/alipayscan_default.png"><b>支付宝打赏</b></span>
+                            <span class="wechat-code"> <img class="wechat-img"
+                                    src="/assets/zanshang/weixin_dianzan_default.png"><b>微信打赏</b> </span>
+                        </span></div>
+                    <p class="reward-notice">赞赏一下</p>
+                </div>
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                <div class="social-share" data-wechat-qrcode-helper="" align="center"></div>
+                <!--  css & js -->
+                <link rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>
+
+                <!-- require APlayer -->
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+                <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+
+                <div class="aplayer" data-id="913528940" data-server="netease"
+                    data-type="playlist" data-fixed="true"
+                    data-mini="true" data-autoplay="true"
+                    data-lrctype="2>" data-mutex="true">
+                </div>
+                
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+                <!-- disqus 评论框 start -->
+                <div class="comment">
+                    <div id="lv-container" data-id="city" data-uid="MTAyMC80NDIxNy8yMDc1MA=="></div>
+                </div>
+                <!-- disqus 评论框 end -->
+                
+
+            </div>
+
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+  
+    <style>
+      span.toc-nav-number{
+        display: none
+      }
+    </style>
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#简介"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x7B80;&#x4ECB;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#准备"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">&#x51C6;&#x5907;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#核心20"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">&#x6838;&#x5FC3;2.0</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#商品组件20"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">&#x5546;&#x54C1;&#x7EC4;&#x4EF6;2.0</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#代金券组件20"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">&#x4EE3;&#x91D1;&#x5238;&#x7EC4;&#x4EF6;2.0</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#门店组件20"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">&#x95E8;&#x5E97;&#x7EC4;&#x4EF6;2.0</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#会员组件20"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">&#x4F1A;&#x5458;&#x7EC4;&#x4EF6;2.0</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#拼团组件20"><span class="toc-nav-number">2.6.</span> <span class="toc-nav-text">&#x62FC;&#x56E2;&#x7EC4;&#x4EF6;2.0</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#团购组件20"><span class="toc-nav-number">2.7.</span> <span class="toc-nav-text">&#x56E2;&#x8D2D;&#x7EC4;&#x4EF6;2.0</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#api"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">API</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#内置参数"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">&#x5185;&#x7F6E;&#x53C2;&#x6570;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#内置方法"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">&#x5185;&#x7F6E;&#x65B9;&#x6CD5;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#标题头示例"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">&#x6807;&#x9898;&#x5934;&#x793A;&#x4F8B;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#商品示例"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">&#x5546;&#x54C1;&#x793A;&#x4F8B;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#代金券示例"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">&#x4EE3;&#x91D1;&#x5238;&#x793A;&#x4F8B;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#门店示例"><span class="toc-nav-number">3.6.</span> <span class="toc-nav-text">&#x95E8;&#x5E97;&#x793A;&#x4F8B;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#会员示例"><span class="toc-nav-number">3.7.</span> <span class="toc-nav-text">&#x4F1A;&#x5458;&#x793A;&#x4F8B;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#拼团示例"><span class="toc-nav-number">3.8.</span> <span class="toc-nav-text">&#x62FC;&#x56E2;&#x793A;&#x4F8B;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#团购示例"><span class="toc-nav-number">3.9.</span> <span class="toc-nav-text">&#x56E2;&#x8D2D;&#x793A;&#x4F8B;</span></a></li></ol></li></ol>
+          
+            <ol class="toc-nav" id="callbacktop"><a href="javascript:void(0);">回到顶部</a></ol>
+          
+        
+        </div>
+      </aside>
+    
+
+
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#javascript"
+                            title="javascript">javascript</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+<!-- 来必力City版公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    (function (d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+
+        if (typeof LivereTower === 'function') { return; }
+
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+<!-- 来必力City版 公共JS代码 end -->
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function () {
+        anchors.options = {
+            visible: 'hover',
+            placement: 'left',
+            icon: '&'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link {
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top: -0.1em;
+        }
+    }
+</style>
+
+<!-- leancloud -->
+
+<script>
+
+    // 追加pv
+    function addCount(Counter) {
+        var url = '/article/cjvrpjvxu0006n4uzr7sd6w0i.html';
+        var query = new Counter;
+        query.save({
+            words: url
+        }).then(function (object) {
+        })
+    }
+    if(window.location.hostname!=='localhost'){
+    // setInterval(() => {
+        var Counter = AV.Object.extend("Counter");
+        addCount(Counter);
+    // }, 2000);
+    }
+</script>
+
+
+<!-- <script>
+setTimeout(function() {
+        var minder = new kityminder.Minder({
+            renderTo: '.kitymind'
+        });
+        var markdownText = $('.kitymind').text().trim();
+        $('.kitymind p').each(function(index, element) {
+            element.style.display = 'none';
+        });
+        minder.importData('markdown', markdownText);
+        minder.disable();
+        minder.execCommand('hand');
+    },
+    3000
+)
+</script> -->
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                </ul>
+                <p class="copyright text-muted">
+                    &copy; dyrainsy.com 2020
+                    </br>
+                    <sapn id="site-run-time">载入网站运行时间...</sapn>
+                    </br>
+                    
+                    <span id="busuanzi_value_site_pv"></span> pv |
+                    <span id="busuanzi_value_site_uv"></span> uv |
+                    
+                    
+                    &nbsp;&nbsp;<i class="fa fa-file-word-o" aria-hidden="true"></i> <span
+                        class="wordtotalcount">9.2k words</span>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+<!-- kity JavaScript -->
+<!-- <script src="/js/kity.min.js"></script> -->
+
+<!-- kityminder JavaScript -->
+<!-- %- js('js/kityminder.core.min.js') %> -->
+
+<!-- barblog-share-->
+<script src="/js/barblog-share.min.js"></script> 
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if ($('#tag_cloud').length !== 0) {
+        async("https://dyrainsy.com/js/jquery.tagcloud.js", function () {
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: { start: '#bbbbee', end: '#0085a1' },
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+        var $nav = document.querySelector("nav");
+        if ($nav) FastClick.attach($nav);
+    })
+</script>
+<!-- busuanzi.js -->
+
+<script>
+    async("https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js", function () {
+
+    })
+</script>
+
+
+<!-- barblog-share weixin -->
+
+<script>
+    async("https://res.wx.qq.com/open/js/jweixin-1.0.0.js", function () {
+        Barblogshare.InitWeixin({
+            title: '基于jquery、bootstrap弹窗组件',
+            subtitle: '适用于某内部系统',
+            link: 'https://dyrainsy.com/article/cjvrpjvxu0006n4uzr7sd6w0i.html', 
+            imgUrl: 'https://dyrainsy.com/assets/banner/article_backgroud_default.jpg',
+        });
+    })
+</script>
+
+
+<!-- site runing time -->
+<script>
+    $(function () {
+    var _nowdate = new Date();
+        setInterval(function siteRunTime() {
+        var dft = new Date("05/13/2019 10:00:00");
+        _nowdate.setTime(_nowdate.getTime() + 1000);
+        days = (_nowdate - dft) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (_nowdate - dft) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if (String(hnum).length == 1) { hnum = "0" + hnum; } minutes = (_nowdate - dft) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if (String(mnum).length == 1) { mnum = "0" + mnum; }
+        seconds = (_nowdate - dft) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if (String(snum).length == 1) { snum = "0" + snum; }
+        document.getElementById("site-run-time").innerHTML = "Runing " + dnum + " days " + hnum + " : " + mnum + " : " + snum + " seconds";
+    }, 1000);
+    });
+</script>
+
+<!-- leancloud -->
+
+<script>
+    $(function () {
+        if ($(".post-wordcount").length > 0) {
+            $(".post-wordcount").each(function () {
+            var query = new AV.Query("Counter");
+            var _this=this;
+            var url = $(this).attr('id').trim();
+            // where field
+            query.equalTo("words", url);
+            // count
+            query.count().then(function (count) {
+                    // There are number instances of MyClass where words equals url.
+                    $(_this).append('<span><i class="fa fa-eye" aria-hidden="true"></i> ' + count + ' hits</span>')
+            }, function (error) {
+                // error is an instance of AVError.
+            });
+        })
+        }
+    });
+</script>
+
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // Originial
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-XXXXXXXX-X', 'dyrainsy.com');
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // Originial
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?" + '997fa7e54f276ee99cac8e8b86b8d7e';
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<!--Baidu tuison-->
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+    
+
+
+	<!-- <a id="rocket" href="#top" class=""><i class="icon icon-back-top"></i></a> -->
+	<!-- <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script> -->
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://dyrainsy.com/assets/zanshang/Customer service.jpg" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+</body>
+
+</html>
