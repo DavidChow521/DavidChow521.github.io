@@ -51,13 +51,6 @@
     </url>
 
     <url>
-        <loc>https://dyrainsy.com/tags/mysql/</loc>
-        <lastmod>2020-04-01T14:32:53.017Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://dyrainsy.com/tags/KingDeeK3/</loc>
         <lastmod>2020-04-01T14:32:54.289Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -88,6 +81,13 @@
     <url>
         <loc>https://dyrainsy.com/tags/Csharp/</loc>
         <lastmod>2020-04-01T14:32:54.367Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://dyrainsy.com/tags/mysql/</loc>
+        <lastmod>2020-04-02T01:26:02.373Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
